@@ -10,8 +10,7 @@ fun main() {
 fun calculationOfCommission (amountOfPreviousTransfers: Int, amount: Int, cardType:String = "VK Pay" ): Int{
     val commission = when (cardType){
         "VK Pay" -> 0
-        "Visa" -> commissionForVisaAndMir(amount)
-        "Мир" -> commissionForVisaAndMir(amount)
+        "Visa", "Мир" -> commissionForVisaAndMir(amount)
         else -> commissionForMastercardAndMaestro(amountOfPreviousTransfers, amount)
     }
     return commission
